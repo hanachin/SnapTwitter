@@ -7,8 +7,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container">
+    <h1 class="span-24 title">
+      <span class="snap">
+        snap
+      </span>
+      <span class="whim">
+        from
+      </span>
+      <span class="twitter">
+        twitter
+        <i class='icon-twitter'></i>
+      </span>
+      <% if current_user %>
+        <%= link_to signout_path, class:'signout-link' do %>
+          <i class="icon-signout"></i>
+          signout
+        <% end %>
+      <% else %>
+        <%= link_to '/auth/snapwhim', class: 'signin-link' do %>
+          <i class="icon-signin"></i>
+          sign in with snapwhim
+        <% end %>
+      <% end %>
+    </h1>
+    <%= yield %>
+  </div>
 </body>
 </html>

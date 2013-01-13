@@ -1,0 +1,21 @@
+<div class="span-14 colborder howto">&nbsp;</div>
+<% if current_user %>
+  <div class="span-8 last control">
+    <p id="notice">
+      <%= notice %>
+    </p>
+    <%= form_for(current_user) do |f| %>
+      <%= f.label :screen_name, class:'screen-name' do %>
+        <i class='icon-twitter'></i>
+        twitter screen name
+      <% end %>
+      <div class="input-append">
+        <%= f.text_field :screen_name, placeholder: '@your_name', class:'screen-name' %>
+        <%= button_tag 'update', class: 'span-3 update-button' %>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div class="span-8 last signin">
+  </div>
+<% end %>

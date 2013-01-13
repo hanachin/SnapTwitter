@@ -1,4 +1,12 @@
 SnapTwitter::Application.routes.draw do
+  resources :users, only: :update
+
+  root to: 'users#me'
+
+  match '/signout', to: 'sessions#destroy', as: :signout
+  match '/auth/:provider/callback', to: 'sessions#create'
+  match '/auth/failure', to: 'sessions#failure'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

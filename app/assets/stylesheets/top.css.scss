@@ -1,0 +1,92 @@
+@import 'compass/reset';
+@import 'sassy-buttons';
+@import 'compass/utilities';
+@import 'compass/css3';
+@import 'zurui-sass';
+@import url(http://fonts.googleapis.com/css?family=Dancing+Script);
+
+$twitter-color: #00C0F7;
+
+.container {
+  .title {
+    position: relative;
+    border-bottom: 3px solid #00b7d1;
+
+    .snap, .whim, .twitter {
+      font: 4em 'Dancing Script';
+    }
+
+    .snap {
+      color: #EE1F6A;
+    }
+
+    .whim {
+      color: #00B7D1;
+    }
+
+    .twitter {
+      color: $twitter-color;
+      .icon-twitter {
+        font-size: 0.8em;
+      }
+    }
+
+    .signin-link, .signout-link {
+      position: absolute;
+      text-decoration: none;
+      right: 1em;
+      bottom: 1em;
+    }
+
+    .signin-link {
+      @include sassy-button;
+    }
+
+    .signout-link {
+      @include sassy-button-structure;
+      @include sassy-button-gradient("matte", #e86a43);
+    }
+  }
+
+  .signin, .control {
+    margin-top: 1em;
+  }
+
+  .howto {
+    height: 20em;
+  }
+
+  .control {
+    @include zurui-box-emboss;
+    @include zurui-box-outer;
+    @include border-radius(4px);
+    position: relative;
+    padding: 1em;
+    height: 6.5em;
+    background: #f8f8f8;
+
+    .screen-name {
+      width: 100%;
+    }
+
+    #user_screen_name {
+      @include zurui-box-deboss;
+      @include border-radius(2px);
+      //padding-left: 0.5em;
+      font-size: 1em;
+      line-height: 2em;
+      height: 2em;
+    }
+
+    .icon-twitter {
+      color: $twitter-color;
+    }
+
+    .update-button {
+      @include sassy-button-structure;
+      @include sassy-button-gradient("matte", #8cbe5f);
+      position: absolute;
+      right: 0em;
+    }
+  }
+}
