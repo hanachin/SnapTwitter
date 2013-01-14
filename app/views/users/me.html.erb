@@ -1,4 +1,17 @@
-<div class="span-14 colborder howto">&nbsp;</div>
+<div class="span-14 colborder howto">
+  <% if current_user %>
+    <h2 class="snapped-title">Snapped tweets</h2>
+    <ul class="tweets">
+      <% current_user.tweets.each do |tweet| %>
+        <li class="tweet">
+          <%= tweet.text %>
+          /
+          <%= link_to tweet.tweet_created_at, "http://twitter.com/#{current_user.screen_name}/status/#{tweet.id_str}" %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
 <% if current_user %>
   <div class="span-8 last control">
     <%= form_for(current_user) do |f| %>

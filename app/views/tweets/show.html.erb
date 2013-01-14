@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Text:</b>
+  <%= @tweet.text %>
+</p>
+
+<p>
+  <b>Id str:</b>
+  <%= @tweet.id_str %>
+</p>
+
+<p>
+  <b>Media url:</b>
+  <%= @tweet.media_url %>
+</p>
+
+<p>
+  <b>Raw:</b>
+  <%= @tweet.raw %>
+</p>
+
+
+<%= link_to 'Edit', edit_tweet_path(@tweet) %> |
+<%= link_to 'Back', tweets_path %>

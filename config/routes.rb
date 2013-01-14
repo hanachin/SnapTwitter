@@ -1,7 +1,7 @@
 SnapTwitter::Application.routes.draw do
-  resources :users, only: :update
-
   root to: 'users#me'
+  resources :tweets, only: :create
+  resources :users,  only: :update
 
   match '/signout', to: 'sessions#destroy', as: :signout
   match '/auth/:provider/callback', to: 'sessions#create'

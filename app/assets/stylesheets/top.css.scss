@@ -8,6 +8,17 @@
 $twitter-color: #00C0F7;
 
 .container {
+  .snapped-title {
+    font-size: 2em;
+    margin: 0.5em;
+  }
+
+  .tweets {
+    .tweet {
+      margin-left: 1em;
+    }
+  }
+
   .title {
     position: relative;
     border-bottom: 3px solid #00b7d1;
@@ -53,7 +64,8 @@ $twitter-color: #00C0F7;
   }
 
   .howto {
-    height: 20em;
+    height: 100%;
+    min-height: 20em;
   }
 
   .control {
