@@ -44,7 +44,7 @@ class TweetsController < ApplicationController
     user = User.find_by_screen_name(params[:screen_name])
     if user
       tweet = user.tweets.create(params['tweet'])
-      add_wanto(user, tweet.text)
+      add_wanto(user, tweet)
     end
     render nothing: true
   end
