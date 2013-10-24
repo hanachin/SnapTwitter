@@ -38,7 +38,7 @@ gem 'jquery-rails'
 
 gem 'oauth2'
 gem 'omniauth-oauth2'
-gem 'tweetstream'
+gem 'tweetstream', github: 'tweetstream'
 gem 'dotenv-rails'
 
 # To use ActiveModel has_secure_password
